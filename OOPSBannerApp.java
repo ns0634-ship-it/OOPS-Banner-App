@@ -3,7 +3,7 @@
  *
  * Displays OOPS to the console.
  *
- * @author Vidushi
+ * @author Netra
  * @version 1.0
  */
 
