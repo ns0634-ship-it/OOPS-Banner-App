@@ -1,15 +1,23 @@
 /**
- * OOPSBannerApp UC1 – OOPS Banner Display Application
+ * UC2 – Display OOPS Banner using + Operator
  *
- * Displays OOPS to the console.
+ * Prints OOPS using string concatenation (+).
  *
- * @author Vidushi
- * @version 1.0
+ * @author Netra
+ * @version 2.0
  */
 
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
-        System.out.println("OOPS");
+
+        System.out.println(" " + "***" + "   " + "***" + "  " + "*****" + "  " + "*****");
+        System.out.println("*" + "   " + "*" + " " + "*" + "   " + "*" + " " + "*" + "   " + "*" + " " + "*");
+        System.out.println("*" + "   " + "*" + " " + "*" + "   " + "*" + " " + "*" + "   " + "*" + " " + "*");
+        System.out.println("*" + "   " + "*" + " " + "*" + "   " + "*" + " " + "*****" + "  " + "*****");
+        System.out.println("*" + "   " + "*" + " " + "*" + "   " + "*" + " " + "*" + "          " + "*");
+        System.out.println("*" + "   " + "*" + " " + "*" + "   " + "*" + " " + "*" + "          " + "*");
+        System.out.println(" " + "***" + "   " + "***" + "  " + "*" + "      " + "*****");
+
     }
 }
