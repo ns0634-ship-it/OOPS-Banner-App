@@ -1,64 +1,88 @@
+import java.util.HashMap;
+import java.util.Map;
+
 /**
- * UC5 - Render OOPS as Banner using Inline Array Initialization
- * Combines declaration and initialization in one statement
- * 
- * @author Netra
- * @version 5.0
+ * UC8 - Banner App using HashMap
  */
+public class BannerApp {
 
-public class OOPSBannerApp {
+    /**
+     * Method to create and return character patterns
+     */
+    public static Map<Character, String[]> getCharacterPatterns() {
 
-    public static void main(String[] args) {
+        Map<Character, String[]> map = new HashMap<>();
 
-        // Inline declaration + initialization
-        String[] banner = {
+        // Pattern for 'O'
+        map.put('O', new String[]{
+                " ***** ",
+                "*     *",
+                "*     *",
+                "*     *",
+                "*     *",
+                "*     *",
+                " ***** "
+        });
 
-            String.join(" ",
-                    "  *****  ",
-                    "  *****  ",
-                    "  ****** ",
-                    "  ****** "),
+        // Pattern for 'P'
+        map.put('P', new String[]{
+                " ***** ",
+                "*     *",
+                "*     *",
+                " ***** ",
+                "*      ",
+                "*      ",
+                "*      "
+        });
 
-            String.join(" ",
-                    " *     * ",
-                    " *     * ",
-                    " *     * ",
-                    " *       "),
+        // Pattern for 'S'
+        map.put('S', new String[]{
+                " ***** ",
+                "*     *",
+                "*      ",
+                " ***** ",
+                "      *",
+                "*     *",
+                " ***** "
+        });
 
-            String.join(" ",
-                    " *     * ",
-                    " *     * ",
-                    " *     * ",
-                    " *       "),
+        return map;
+    }
 
-            String.join(" ",
-                    " *     * ",
-                    " *     * ",
-                    " ******  ",
-                    "  *****  "),
+    /**
+     * Method to print banner
+     */
+    public static void printBanner(String text, Map<Character, String[]> map) {
 
-            String.join(" ",
-                    " *     * ",
-                    " *     * ",
-                    " *       ",
-                    "       * "),
+        StringBuilder[] lines = new StringBuilder[7];
 
-            String.join(" ",
-                    " *     * ",
-                    " *     * ",
-                    " *       ",
-                    " *     * "),
+        // Initialize lines
+        for (int i = 0; i < 7; i++) {
+            lines[i] = new StringBuilder();
+        }
 
-            String.join(" ",
-                    "  *****  ",
-                    "  *****  ",
-                    " *       ",
-                    "  *****  ")
-        };
+        // Build banner
+        for (char ch : text.toCharArray()) {
+            String[] pattern = map.get(ch);
 
-        // Enhanced for-loop to print banner
-        for (String line : banner) {
+            for (int i = 0; i < 7; i++) {
+                lines[i].append(pattern[i]).append("  ");
+            }
+        }
+
+        // Print banner
+        for (StringBuilder line : lines) {
             System.out.println(line);
         }
+    }
+
+    /**
+     * Main method
+     */
+    public static void main(String[] args) {
+
+        Map<Character, String[]> patterns = getCharacterPatterns();
+
+        printBanner("OOPS", patterns);
     }
 }
